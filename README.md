@@ -1,12 +1,12 @@
 🚀 Inventra - Inventory Management System
 
-A scalable RESTful Inventory Management System built using Java, Spring Boot, Spring Data JPA, Hibernate, and Oracle Database. Inventra is designed to simplify inventory operations by managing products, categories, suppliers, inventory, and sales through a clean RESTful architecture.
+A scalable RESTful Inventory Management System built using Java, Spring Boot, Spring Data JPA, Hibernate, and Oracle Database. Inventra is designed to simplify inventory operations by managing product information, categories, suppliers, and sales transactions.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📌 Overview
 
-Inventra is an enterprise-style backend application developed following a layered architecture. It provides secure and scalable REST APIs with validation, centralized exception handling, pagination, and business analytics.
+Inventra is an enterprise-style backend application developed following a layered architecture. It provides secure and scalable REST APIs with validation, centralized exception handling, pagination, and automatic invoice generation for sales transactions.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -111,75 +111,51 @@ Inventra is an enterprise-style backend application developed following a layere
 
 🏗 Architecture
 
-Controller
-      ↓
-Service Interface
-      ↓
-Service Implementation
-      ↓
-Repository
-      ↓
-Oracle Database
-
 The application follows a layered architecture to ensure maintainability, scalability, and separation of concerns.
 
+**Architecture Diagram:**
 
-					flowchart TD
-    User --> API["REST API"]
-    API --> Spring["Spring Boot Server"]
+```
+                              User
+                               ▲
+                               │
+                          REST API
+                               ▲
+                               │
+                        Spring Boot Server
+                          │      │      │
+                ┌─────────┼─────┼──────┴─────────┐
+                │         │     │                │
+             Product  Category Supplier    Sales │ Inventory │ Dashboard
+                │         │     │                │
+                └─────────┴─────┴────────────────┘
+                               │
+                            Service
+                        ┌──────┬──────┬──────┐
+                        │      │      │      │
+                   Validation Exception Invoice
+                        │      │      │
+                        └──────┼──────┘
+                               │
+                              JPA
+                               │
+                        Oracle Database
+                               │
+                        JSON Response
+                               ▼
+                              User
+```
 
-    Spring --> Product
-    Spring --> Category
-    Spring --> Supplier
-    Spring --> Sales
-    Spring --> Inventory
-    Spring --> Dashboard
+**Detailed Architecture Flow:**
 
-    Product --> Service
-    Category --> Service
-    Supplier --> Service
-    Sales --> Service
-    Inventory --> Service
-    Dashboard --> Service
-
-    Service --> Validation
-    Service --> Exception
-    Service --> Invoice
-
-    Validation --> JPA
-    Exception --> JPA
-    Invoice --> JPA
-
-    JPA --> Oracle[(Oracle Database)]
-    Oracle --> Response["JSON Response"]
-    Response --> User
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- **User** → Makes requests to the system
+- **REST API** → Handles HTTP requests and responses
+- **Spring Boot Server** → Core application server
+- **Controllers** → Handle incoming requests (Product, Category, Supplier, Sales, Inventory, Dashboard)
+- **Service Layer** → Business logic implementation with Validation, Exception Handling, and Invoice Generation
+- **JPA & Hibernate** → ORM for database operations
+- **Oracle Database** → Persistent data storage
+- **JSON Response** → Formatted response sent back to the user
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -230,13 +206,12 @@ Centralized exception handling using:
 
 Example Response
 
-: json
-
+```json
 {
   "success": false,
   "message": "Category not found."
 }
-
+```
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -246,7 +221,9 @@ Implemented using Spring Data JPA.
 
 Example
 
+```
 GET /products/page?page=0&size=10
+```
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -256,7 +233,9 @@ Each sale automatically generates a unique invoice number.
 
 Example
 
+```
 INV-20260719-4821
+```
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -297,11 +276,9 @@ All endpoints have been tested using Postman.
 
 👨‍💻 Developer - Nikhil Khatke  ( Java Developer )
 
-🔗 GitHub:
-(Add Repository Link)
+🔗 GitHub: https://github.com/Nikhil-khatke11
 
-💼 LinkedIn:
-(Add LinkedIn Profile)
+💼 LinkedIn: (Add LinkedIn Profile)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
