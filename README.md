@@ -219,7 +219,7 @@ INV-20260719-4821
 
 🌐 REST APIs
 
-Currently includes 35+ REST APIs across:
+Currently includes 48+ REST APIs across:
 
 - Category Management
 - Product Management
