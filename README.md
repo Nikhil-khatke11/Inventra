@@ -117,11 +117,13 @@ The application follows a layered architecture to ensure maintainability, scalab
 
 ```
                               User
-                               ▲
+
                                │
+
                             REST API
-                               ▲
+                               
                                │
+
                       Spring Boot Server
                           │     │      │
          ┌──────────────────────────────────────────────┐
