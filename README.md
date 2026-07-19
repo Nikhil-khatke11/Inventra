@@ -124,42 +124,35 @@ Oracle Database
 The application follows a layered architecture to ensure maintainability, scalability, and separation of concerns.
 
 
-																
-                            👤 USER
-                               │
-                               ▼
-                    🌐 REST API Request
-                               │
-                               ▼
-                    🚀 Spring Boot Server
-                               │
-      ┌───────────┬───────────┬───────────┬───────────┬───────────┬
-      │           │           │           │           │           │
-      ▼           ▼           ▼           ▼           ▼           ▼
- 📦 Product   📂 Category  🏢 Supplier  💰 Sales  📊 Inventory  📈 Dashboard
-      │           │           │           │           │           │
-      └───────────┴───────────┴───────────┴───────────┴───────────┘
-                               │
-                               ▼
-                    💼 Business Logic Layer
-                               │
-         ┌─────────────────────┼─────────────────────┐
-         │                     │                     │
-         ▼                     ▼                     ▼
-   ✅ Validation      ⚠ Exception Handling    🧾 Invoice Generator
-                               │
-                               ▼
-                     🗄 Spring Data JPA
-                               │
-                               ▼
-                      🛢 Oracle Database
-                               │
-                               ▼
-                     📦 JSON API Response
-                               │
-                               ▼
-                            👤 USER
+					flowchart TD
+    User --> API["REST API"]
+    API --> Spring["Spring Boot Server"]
 
+    Spring --> Product
+    Spring --> Category
+    Spring --> Supplier
+    Spring --> Sales
+    Spring --> Inventory
+    Spring --> Dashboard
+
+    Product --> Service
+    Category --> Service
+    Supplier --> Service
+    Sales --> Service
+    Inventory --> Service
+    Dashboard --> Service
+
+    Service --> Validation
+    Service --> Exception
+    Service --> Invoice
+
+    Validation --> JPA
+    Exception --> JPA
+    Invoice --> JPA
+
+    JPA --> Oracle[(Oracle Database)]
+    Oracle --> Response["JSON Response"]
+    Response --> User
 
 
 
