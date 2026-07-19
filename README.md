@@ -163,6 +163,33 @@ The application follows a layered architecture to ensure maintainability, scalab
                       USER
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🗄 Database Design
@@ -258,20 +285,6 @@ Currently includes 35+ REST APIs across:
 🧪 API Testing
 
 All endpoints have been tested using Postman.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📁 Project Structure
-
-src
-├── controller
-├── service
-├── repository
-├── entity
-├── dto
-├── exception
-├── config
-└── util
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
