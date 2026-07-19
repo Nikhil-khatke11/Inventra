@@ -125,14 +125,17 @@ The application follows a layered architecture to ensure maintainability, scalab
                                │
 
                       Spring Boot Server
-                          │     │      │
+
+                        │     │      │
          ┌──────────────────────────────────────────────┐
          │         │      │        │        │           │
       Product  Category Supplier Sales Inventory  Dashboard
          │         │      │        │        │           │
          └─────────┴──────┴────────┴────────┴───────────┘
                                │
+
                             Service
+
                  ┌───────────────────────────┐
                  │             │             │
                  Validation Exception Invoice
@@ -140,11 +143,17 @@ The application follows a layered architecture to ensure maintainability, scalab
                         └──────┼──────┘
                                │
                               JPA
+
                                │
+
                         Oracle Database
+
                                │
+
                         JSON Response
-                               ▼
+
+                              │   
+                              ▼
                              User
 ```
 
