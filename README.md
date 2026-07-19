@@ -125,42 +125,40 @@ The application follows a layered architecture to ensure maintainability, scalab
 
 
 																
-			            USER
-                       
-                          │
-                          ▼
-                REST API Request
-                          │
-                          ▼
-                  Spring Boot Server
-                          │
-        ┌─────────────────┼─────────────────┐
-        │                 │                 │
-        ▼                 ▼                 ▼
-   Product API      Category API      Supplier API
-        │                 │                 │
-        └──────────────┬──┴─────────────────┘
-                       │
-                       ▼
-                Business Logic Layer
-                       │
-        ┌──────────────┼──────────────┐
-        │              │              │
-        ▼              ▼              ▼
-     Validation    Exception     Invoice Generator
-                     Handling
-                       │
-                       ▼
-               Spring Data JPA
-                       │
-                       ▼
-                 Oracle Database
-                       │
-                       ▼
-               JSON API Response
-                       │
-                       ▼
-                      USER
+                            👤 USER
+                               │
+                               ▼
+                    🌐 REST API Request
+                               │
+                               ▼
+                    🚀 Spring Boot Server
+                               │
+      ┌───────────┬───────────┬───────────┬───────────┬───────────┬
+      │           │           │           │           │           │
+      ▼           ▼           ▼           ▼           ▼           ▼
+ 📦 Product   📂 Category  🏢 Supplier  💰 Sales  📊 Inventory  📈 Dashboard
+      │           │           │           │           │           │
+      └───────────┴───────────┴───────────┴───────────┴───────────┘
+                               │
+                               ▼
+                    💼 Business Logic Layer
+                               │
+         ┌─────────────────────┼─────────────────────┐
+         │                     │                     │
+         ▼                     ▼                     ▼
+   ✅ Validation      ⚠ Exception Handling    🧾 Invoice Generator
+                               │
+                               ▼
+                     🗄 Spring Data JPA
+                               │
+                               ▼
+                      🛢 Oracle Database
+                               │
+                               ▼
+                     📦 JSON API Response
+                               │
+                               ▼
+                            👤 USER
 
 
 
