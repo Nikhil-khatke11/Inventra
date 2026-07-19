@@ -1,6 +1,6 @@
 🚀 Inventra - Inventory Management System
 
-A scalable RESTful Inventory Management System built using Java, Spring Boot, Spring Data JPA, Hibernate, and Oracle Database. Inventra is designed to simplify inventory operations by managing product information, categories, suppliers, and sales transactions.
+A scalable RESTful Inventory Management System built using Java, Spring Boot, Spring Data JPA, Hibernate, and Oracle Database. Inventra is designed to simplify inventory operations by managing products, categories, suppliers, and sales.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -119,21 +119,21 @@ The application follows a layered architecture to ensure maintainability, scalab
                               User
                                ▲
                                │
-                          REST API
+                            REST API
                                ▲
                                │
-                        Spring Boot Server
-                          │      │      │
-                ┌─────────┼─────┼──────┴─────────┐
-                │         │     │                │
-             Product  Category Supplier    Sales │ Inventory │ Dashboard
-                │         │     │                │
-                └─────────┴─────┴────────────────┘
+                      Spring Boot Server
+                          │     │      │
+         ┌──────────────────────────────────────────────┐
+         │         │      │        │        │           │
+      Product  Category Supplier Sales Inventory  Dashboard
+         │         │      │        │        │           │
+         └─────────┴──────┴────────┴────────┴───────────┘
                                │
                             Service
-                        ┌──────┬──────┬──────┐
-                        │      │      │      │
-                   Validation Exception Invoice
+                 ┌───────────────────────────┐
+                 │             │             │
+                 Validation Exception Invoice
                         │      │      │
                         └──────┼──────┘
                                │
@@ -143,42 +143,9 @@ The application follows a layered architecture to ensure maintainability, scalab
                                │
                         JSON Response
                                ▼
-                              User
+                             User
 ```
 
-**Detailed Architecture Flow:**
-
-- **User** → Makes requests to the system
-- **REST API** → Handles HTTP requests and responses
-- **Spring Boot Server** → Core application server
-- **Controllers** → Handle incoming requests (Product, Category, Supplier, Sales, Inventory, Dashboard)
-- **Service Layer** → Business logic implementation with Validation, Exception Handling, and Invoice Generation
-- **JPA & Hibernate** → ORM for database operations
-- **Oracle Database** → Persistent data storage
-- **JSON Response** → Formatted response sent back to the user
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🗄 Database Design
-
-Entities
-
-- Product
-- Category
-- Supplier
-- Sale
-
-Relationships
-
-Category (1)
-      │
-      ▼
-Product (Many)
-      ▲
-      │
-Supplier (1)
-
-Each Product belongs to one Category and one Supplier.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -277,8 +244,6 @@ All endpoints have been tested using Postman.
 👨‍💻 Developer - Nikhil Khatke  ( Java Developer )
 
 🔗 GitHub: https://github.com/Nikhil-khatke11
-
-💼 LinkedIn: (Add LinkedIn Profile)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
