@@ -124,7 +124,7 @@ Oracle Database
 The application follows a layered architecture to ensure maintainability, scalability, and separation of concerns.
 
 
-
+																
 			            USER
                        
                           │
@@ -161,6 +161,7 @@ The application follows a layered architecture to ensure maintainability, scalab
                        │
                        ▼
                       USER
+
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
