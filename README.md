@@ -250,6 +250,19 @@ All endpoints have been tested using Postman.
 - Spring Security & JWT
 - Cloud Deployment
 
+🚀 Ongoing Development
+
+This project is actively being enhanced. The following resources will be added in upcoming updates:
+
+- API testing screenshots (Postman / Swagger)
+- Application screenshots
+- Deployment guide
+- Architecture diagrams
+- Additional documentation
+- Future feature updates
+
+Stay tuned for upcoming improvements.
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 👨‍💻 Developer - Nikhil Khatke  ( Java Developer )
